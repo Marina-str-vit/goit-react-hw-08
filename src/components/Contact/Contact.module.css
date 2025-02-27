@@ -1,0 +1,33 @@
+.contacts {
+	width: 350px;
+	border: 1px solid black;
+	border-radius: 4px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 10px 3px;
+	background-color: white;
+	box-shadow: 4px 4px 4px grey;
+	outline: transparent;
+  border: transparent;
+	gap: 10px;
+}
+
+.btn {
+	padding: 6px 10px;
+	border-radius: 4px;
+	border-color: burlywood;
+	color: white;
+	background-color: rgb(249, 99, 99);
+}
+.btn:hover, .btn:focus {
+	color: white;
+	background-color: rgb(216, 7, 7);
+} 
+
+
+.icon {
+	display: flex;
+	margin-bottom: 4px;
+}
+
