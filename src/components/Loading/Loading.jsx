@@ -1,7 +1,9 @@
 import { DNA } from 'react-loader-spinner';
+import s from './Loading.module.css';
 
-export default function Loading({ children }) {
+export default function Loading() {
   return (
+    <div className={s.loader}>
     <DNA
       visible={true}
       height="80"
@@ -10,5 +12,6 @@ export default function Loading({ children }) {
       wrapperStyle={{ justifyContent: 'center' }}
       wrapperClass="dna-wrapper"
     />
+    </div>
   );
 }

@@ -1,74 +1,121 @@
-import s from "./ContactForm.module.css";
+import css from "../ContactForm/ContactForm.module.css";
+
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { addContact } from "../../redux/contactsOps";
-import { useDispatch } from "react-redux";
 import { useId } from "react";
+import { useDispatch } from "react-redux";
 
-const ContactForm = () => {
+import SearchBox from "../SearchBox/SearchBox";
+
+import { addContact } from "../../redux/contacts/operations";
+
+import { FaUser } from "react-icons/fa";
+import { FaPhone } from "react-icons/fa6";
+import { IoAdd } from "react-icons/io5";
+import { IconContext } from "react-icons";
+import toast from "react-hot-toast";
+
+
+
+const UserSchema = Yup.object().shape({
+  name: Yup.string()
+    .min(3, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Name is Required!"),
+
+  number: Yup.string()
+    .min(3, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Phone is Required!"),
+});
+
+export default function ContactForm() {
+  const fieldId = useId();
   const dispatch = useDispatch();
 
-  const initialValues = {
-    name: '',
-    number: '',
+  const handleAddContact = (values, actions) => {
+    dispatch(addContact(values))
+      .unwrap()
+      .then(() => {
+        toast.success("Contact successfully added!");
+      })
+      .catch(() => {
+        toast.error(
+          "Oops! Some problem with the contact!"
+        );
+      });
+    actions.resetForm();
   };
-  const onlyLetters = /^[A-Za-zА-Яа-яЄєІіЇїҐґ-\s]+$/;
-
-  const applySchema = Yup.object().shape({
-    name: Yup.string()
-      .required('Required')
-      .min(3, 'Too Short!')
-      .max(50, 'Too Long!')
-      .matches(onlyLetters, 'Only Letters')
-      .trim(),
-    number: Yup.number()
-      .required('Required')
-  });
-
-    const nameId = useId();
-    const numberId = useId();
-
-    const onSubmit = (values, options) => {
-        values.id = crypto.randomUUID();
-          dispatch(addContact(values));
-          options.resetForm();
-    };
-
 
   return (
-    <section className={s.formWrapper}>
-    <Formik
-      initialValues={initialValues}
-      validationSchema={applySchema}
-      onSubmit={onSubmit}>
-      <Form className={s.form}>
-        <div className={s.formFields}>
-          <label htmlFor={nameId}>Name</label>
-          <Field
-            className={s.input}
-            type="text"
-            name="name"
-            id={nameId}       
-          />
-          <ErrorMessage className={s.error} name="name" component="div" />
-        </div>
-        <div className={s.formFields}>
-          <label htmlFor={numberId}>Number</label>
-          <Field
-            className={s.input}
-            type="tel"
-            name="number"
-            id={numberId}
-          />
-          <ErrorMessage className={s.error} name="number" component="div" />
-        </div>
-          <button className={s.btnAdd} type="submit">
-          Add contact
-        </button>
-      </Form>
-    </Formik>
-    </section>
+    <div className={css.container}>
+      <div className={css.formContainer}>
+        <Formik
+          initialValues={{ name: "", number: "" }}
+          validationSchema={UserSchema}
+          onSubmit={handleAddContact}
+        >
+          <Form className={css.form}>
+            <div className={css.formFields}>
+              <label className={css.formInputLabel} htmlFor={`${fieldId}-name`}>
+                Name
+              </label>
+              <div className={css.iconPosition}>
+                <Field
+                  className={css.input}
+                  type="text"
+                  name="name"
+                  id={`${fieldId}-name`}
+                />
+                <span className={css.inputIcon}>
+                  <FaUser />
+                </span>
+              </div>
+              <ErrorMessage
+                className={css.error}
+                name="name"
+                component="span"
+              />
+            </div>
+
+            <div>
+              <label
+                className={css.formInputLabel}
+                htmlFor={`${fieldId}-number`}
+              >
+                Number
+              </label>
+              <div className={css.iconPosition}>
+                <Field
+                  className={css.input}
+                  type="tel"
+                  name="number"
+                  id={`${fieldId}-number`}
+                />
+                <span className={css.inputIcon}>
+                  <FaPhone />
+                </span>
+              </div>
+              <ErrorMessage
+                className={css.error}
+                name="number"
+                component="span"
+              />
+            </div>
+            <button className={css.btn} type="submit">
+              <IconContext.Provider
+                value={{
+                  color: "white",
+                  size: "2em",
+                }}
+              >
+                <IoAdd className={css.icon} />
+              </IconContext.Provider>
+						</button>				
+						<SearchBox/>	
+          </Form>
+				</Formik>			
+			</div>			
+    </div>
   );
 }
-
-export default ContactForm;
