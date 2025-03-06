@@ -1,4 +1,4 @@
-import css from "../BasicModal/BasicModal.module.css";
+import s from "../BasicModal/BasicModal.module.css";
 
 import { useState } from "react";
 import { useDispatch } from "react-redux";
@@ -47,7 +47,7 @@ export default function BasicModal({ item }) {
 
   return (
     <div>
-      <button onClick={handleOpen} className={css.btn}>
+      <button onClick={handleOpen} className={s.btn}>
         <IconContext.Provider
           value={{
             color: "white",
@@ -68,7 +68,7 @@ export default function BasicModal({ item }) {
           <Typography id="modal-modal-title" variant="h6" component="h2">
             Are you sure you want to delete the contact?
           </Typography>
-          <button onClick={handleDeleteContact} className={css.btnModal}>
+          <button onClick={handleDeleteContact} className={s.btnModal}>
             <IconContext.Provider
               value={{
                 color: "white",

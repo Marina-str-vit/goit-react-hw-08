@@ -1,4 +1,4 @@
-import css from "../ContactForm/ContactForm.module.css";
+import s from "../ContactForm/ContactForm.module.css";
 
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
@@ -48,31 +48,31 @@ export default function ContactForm() {
   };
 
   return (
-    <div className={css.container}>
-      <div className={css.formContainer}>
+    <div className={s.container}>
+      <div className={s.formContainer}>
         <Formik
           initialValues={{ name: "", number: "" }}
           validationSchema={UserSchema}
           onSubmit={handleAddContact}
         >
-          <Form className={css.form}>
-            <div className={css.formFields}>
-              <label className={css.formInputLabel} htmlFor={`${fieldId}-name`}>
+          <Form className={s.form}>
+            <div className={s.formFields}>
+              <label className={s.formInputLabel} htmlFor={`${fieldId}-name`}>
                 Name
               </label>
-              <div className={css.iconPosition}>
+              <div className={s.iconPosition}>
                 <Field
-                  className={css.input}
+                  className={s.input}
                   type="text"
                   name="name"
                   id={`${fieldId}-name`}
                 />
-                <span className={css.inputIcon}>
+                <span className={s.inputIcon}>
                   <FaUser />
                 </span>
               </div>
               <ErrorMessage
-                className={css.error}
+                className={s.error}
                 name="name"
                 component="span"
               />
@@ -80,29 +80,31 @@ export default function ContactForm() {
 
             <div>
               <label
-                className={css.formInputLabel}
+                className={s.formInputLabel}
                 htmlFor={`${fieldId}-number`}
               >
                 Number
               </label>
-              <div className={css.iconPosition}>
+              <div className={s.iconPosition}>
                 <Field
-                  className={css.input}
+                  className={s.input}
                   type="tel"
                   name="number"
+                  pattern="(\d{1,2}( |-|\.)?)?(\(?\d{3}\)?|\d{3})( |-|\.)?(\d{3}( |-|\.)?\d{4})"
+                   title="Use this format 380505558822  or 38-050-555-8822 or 38 050 555 8822, min 10 numbers."
                   id={`${fieldId}-number`}
                 />
-                <span className={css.inputIcon}>
+                <span className={s.inputIcon}>
                   <FaPhone />
                 </span>
               </div>
               <ErrorMessage
-                className={css.error}
+                className={s.error}
                 name="number"
                 component="span"
               />
             </div>
-            <button className={css.btn} type="submit">
+            <button className={s.btn} type="submit">
    {/* малюю коло навколо IoAdd */}
               <IconContext.Provider
                 value={{
@@ -110,7 +112,7 @@ export default function ContactForm() {
                   size: "1.5em",
                 }}
               >
-                <IoAdd className={css.icon} />
+                <IoAdd className={s.icon} />
               </IconContext.Provider>
 						</button>				
 						<SearchBox/>	

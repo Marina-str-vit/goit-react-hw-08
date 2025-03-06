@@ -1,4 +1,4 @@
-import css from "./Contact.module.css";
+import s from "./Contact.module.css";
 
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -47,39 +47,39 @@ export default function Contact({ item }) {
   };
 
   return (
-    <div className={css.contacts}>
+    <div className={s.contacts}>
       <Avatar {...stringAvatar(item.name)} />
 
-      <div className={css.inputWrap}>
-        <div className={css.iconWrap}>
+      <div className={s.inputWrap}>
+        <div className={s.iconWrap}>
           <FaUser />
           {isEditing ? (
             <input
-              className={css.input}
+              className={s.input}
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
           ) : (
-            <p className={css.name}>{item.name}</p>
+            <p className={s.name}>{item.name}</p>
           )}
         </div>
-        <div className={css.iconWrap}>
+        <div className={s.iconWrap}>
           <FaPhone />
           {isEditing ? (
             <input
-              className={css.input}
+              className={s.input}
               type="text"
               value={number}
               onChange={(e) => setNumber(e.target.value)}
             />
           ) : (
-            <p className={css.number}>{item.number}</p>
+            <p className={s.number}>{item.number}</p>
           )}
         </div>
       </div>
 
-      <div className={css.btnWrap}>
+      <div className={s.btnWrap}>
         <IconContext.Provider
           value={{
             color: "white",
@@ -87,7 +87,7 @@ export default function Contact({ item }) {
           }}
         >
           {isEditing ? (
-            <button className={css.btn} onClick={handleSaveClick}>
+            <button className={s.btn} onClick={handleSaveClick}>
               <IconContext.Provider
                 value={{
                   color: "white",
@@ -98,7 +98,7 @@ export default function Contact({ item }) {
               </IconContext.Provider>
             </button>
           ) : (
-            <button className={css.btn} onClick={handleEditClick}>
+            <button className={s.btn} onClick={handleEditClick}>
               <IconContext.Provider
                 value={{
                   color: "white",

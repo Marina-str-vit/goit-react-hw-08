@@ -35,7 +35,7 @@
   margin-bottom: 4px;
   margin-top: 30px;
   font-size: 17px;
-  font-weight: 300;
+  font-weight: 400;
   color: rgb(40, 39, 39);
 }
 
@@ -62,7 +62,7 @@
 .inputIcon {
   position: absolute;
   right: 16px;
-  top: 70%;
+  top: 80%;
   transform: translateY(-100%);
   fill: #2e2f42;
 }

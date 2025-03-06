@@ -75,12 +75,12 @@
   border-radius: 50%;
   cursor: pointer;
   border: none;
-  background-color: #f84fd9;
+  background-color: #f069d7;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn:hover {
-	background-color: #e707be;
+	background-color: #d202ac;
 }
 
 .error {

@@ -1,4 +1,4 @@
-import css from "./UserMenu.module.css";
+import s from "./UserMenu.module.css";
 
 import { useDispatch, useSelector } from "react-redux";
 
@@ -14,14 +14,14 @@ export default function UserMenu() {
 	const dispatch = useDispatch();
 	
   return (
-    <div className={css.wrapper}>
-      <p className={css.username}>Welcome, {user.name} 🤗</p>
+    <div className={s.wrapper}>
+      <p className={s.username}>Welcome, {user.name} 🤗</p>
       <button
-        className={css.btn}
+        className={s.btn}
         type="button"
         onClick={() => dispatch(logOut())}
       >
-        Logout
+        Log out
       </button>
     </div>
   );

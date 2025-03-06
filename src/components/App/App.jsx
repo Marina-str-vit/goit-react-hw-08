@@ -1,4 +1,4 @@
-import css from "../App/App.module.css";
+import s from "../App/App.module.css";
 
 import { lazy, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
@@ -39,7 +39,7 @@ export default function App() {
   return isRefreshing ? (
     <Loading />
   ) : (
-    <div className={css.app}>
+    <div className={s.app}>
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />

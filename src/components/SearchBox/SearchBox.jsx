@@ -1,4 +1,4 @@
-import css from "./SearchBox.module.css";
+import s from "./SearchBox.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useId } from "react";
 import { changeFilter } from "../../redux/filters/slice.js";
@@ -30,20 +30,20 @@ export default function SearchBox() {
   };
 
   return (
-    <div className={css.container}>
-      <div className={css.formContainer}>
-        <label className={css.inputLabel} htmlFor={`${fieldId}-name`}>
+    <div className={s.container}>
+      <div className={s.formContainer}>
+        <label className={s.inputLabel} htmlFor={`${fieldId}-name`}>
         </label>
-        <div className={css.iconPosition}>
+        <div className={s.iconPosition}>
           <input
-            className={css.input}
+            className={s.input}
             id={`${fieldId}-name`}
             type="text"
             value={name || number}
             onChange={handleFindName}
           />
           <IconContext.Provider value={{ size: "1.2em" }}>
-            <span className={css.inputIcon}>
+            <span className={s.inputIcon}>
             <CgSearch />
             </span>
           </IconContext.Provider>
