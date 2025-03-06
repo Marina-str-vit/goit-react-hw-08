@@ -1,16 +1,12 @@
 import css from "./SearchBox.module.css";
-
 import { useDispatch, useSelector } from "react-redux";
 import { useId } from "react";
-
 import { changeFilter } from "../../redux/filters/slice.js";
-
 import {
   selectNameFilter,
   selectNumberFilter,
-} from "../../redux/filters/selectors.js";
-
-import { RiFileSearchFill } from "react-icons/ri";
+} from "../../redux/filters/selector.js";
+import { CgSearch } from "react-icons/cg";
 import { IconContext } from "react-icons";
 
 
@@ -46,9 +42,9 @@ export default function SearchBox() {
             value={name || number}
             onChange={handleFindName}
           />
-          <IconContext.Provider value={{ size: "2em" }}>
+          <IconContext.Provider value={{ size: "1.2em" }}>
             <span className={css.inputIcon}>
-              <RiFileSearchFill />
+            <CgSearch />
             </span>
           </IconContext.Provider>
         </div>

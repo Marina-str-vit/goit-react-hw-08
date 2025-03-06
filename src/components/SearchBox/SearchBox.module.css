@@ -1,9 +1,26 @@
-.filter {
-	/* margin-left: 50px; */
-	margin-bottom: 30px;
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
 }
 
 .input {
-	width: 400px;
-	height: 40px;
+  padding: 10px 20px 10px 40px;
+  width: 100%;
+  border: none;
+  outline: 1px solid transparent;
+  font-size: 16px;
+  border-bottom: 2px solid #141010;
+  background: transparent;
+}
+
+.iconPosition {
+  position: relative;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 5px;
+  top: 100%;
+  transform: translateY(-100%);
 }

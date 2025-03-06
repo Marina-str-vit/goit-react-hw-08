@@ -6,7 +6,7 @@ export default function HomePage() {
 
   return (
     <div className={css.homePage}>
-      <h1 className={css.title}>Task manager welcome page ⭐</h1>
+      <h1 className={css.title}>Task manager welcome page ✍</h1>
     </div>
   );
 }

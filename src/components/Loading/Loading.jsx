@@ -1,9 +1,9 @@
 import { DNA } from 'react-loader-spinner';
-import s from './Loading.module.css';
+import css from './Loading.module.css';
 
 export default function Loading() {
   return (
-    <div className={s.loader}>
+    <div className={css.loader}>
     <DNA
       visible={true}
       height="80"

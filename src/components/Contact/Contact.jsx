@@ -83,7 +83,7 @@ export default function Contact({ item }) {
         <IconContext.Provider
           value={{
             color: "white",
-            size: "1.7em",
+            size: "1.5em",
           }}
         >
           {isEditing ? (
@@ -91,7 +91,7 @@ export default function Contact({ item }) {
               <IconContext.Provider
                 value={{
                   color: "white",
-                  size: "2em",
+                  size: "1.5em",
                 }}
               >
                 <IoAdd />
@@ -99,7 +99,13 @@ export default function Contact({ item }) {
             </button>
           ) : (
             <button className={css.btn} onClick={handleEditClick}>
+              <IconContext.Provider
+                value={{
+                  color: "white",
+                  size: "1em",
+                }}>
               <RiPencilFill />
+              </IconContext.Provider>
             </button>
           )}
         </IconContext.Provider>

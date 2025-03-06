@@ -103,10 +103,11 @@ export default function ContactForm() {
               />
             </div>
             <button className={css.btn} type="submit">
+   {/* малюю коло навколо IoAdd */}
               <IconContext.Provider
                 value={{
                   color: "white",
-                  size: "2em",
+                  size: "1.5em",
                 }}
               >
                 <IoAdd className={css.icon} />
@@ -116,6 +117,6 @@ export default function ContactForm() {
           </Form>
 				</Formik>			
 			</div>			
-    </div>
+     </div>
   );
 }

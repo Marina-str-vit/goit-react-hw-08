@@ -11,7 +11,7 @@ import { RestrictedRoute } from "../RestrictedRoute/RestrictedRoute";
 import { Layout } from "../Layout/Layout";
 import { PrivateRoute } from "../PrivateRoute/PrivateRoute";
 import Loading from "../Loading/Loading";
-import NotificationToast from "../NotificationToast/NotificationToast";
+import Toaster from "../Toaster/Toaster";
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
 const RegistrationPage = lazy(() =>
@@ -70,7 +70,7 @@ export default function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Layout>
-      <NotificationToast />
+      <Toaster />
     </div>
   );
 }

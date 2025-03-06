@@ -51,7 +51,7 @@ export default function BasicModal({ item }) {
         <IconContext.Provider
           value={{
             color: "white",
-            size: "2em",
+            size: "1em",
           }}
         >
           <MdDelete />
@@ -66,13 +66,13 @@ export default function BasicModal({ item }) {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Are you absolutely sure you want to delete the contact?
+            Are you sure you want to delete the contact?
           </Typography>
           <button onClick={handleDeleteContact} className={css.btnModal}>
             <IconContext.Provider
               value={{
                 color: "white",
-                size: "2em",
+                size: "1em",
               }}
             >
               <MdDelete />

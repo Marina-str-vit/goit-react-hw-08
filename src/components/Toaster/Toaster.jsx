@@ -11,7 +11,7 @@ export default function MessageError() {
       toastOptions={{
         duration: 4000,
         style: {
-          border: "2px solid #680747",
+          border: "2px solid  #9504a2",
         },
       }}
     />

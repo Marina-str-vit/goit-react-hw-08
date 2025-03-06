@@ -1,0 +1,13 @@
+.title{
+  font-style: italic;
+  display: block;
+  max-width: 768px; 
+  margin: 40px auto; 
+  padding: 15px 15px;
+
+  text-align: center;
+  font-size: 35px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  backdrop-filter: blur(15px);
+}

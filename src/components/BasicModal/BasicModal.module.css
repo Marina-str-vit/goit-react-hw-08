@@ -1,0 +1,20 @@
+.btn, .btnModal {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+border: none;
+  background-color: #fc858f;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btnModal{
+	margin: 20px auto;
+}
+
+.btn:hover, .btnModal:hover {
+  background-color: #f5071b;
+}

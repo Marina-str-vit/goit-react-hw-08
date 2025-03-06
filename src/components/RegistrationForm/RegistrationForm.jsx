@@ -59,7 +59,7 @@ export default function RegistrationForm() {
         >
           <Form className={css.form}>
             <p className={css.formTitle}>
-              Don`t have an account❔Create account
+              Create account?
             </p>
             <div className={css.formFields}>
               <label className={css.formInputLabel} htmlFor={`${fieldId}-name`}>
